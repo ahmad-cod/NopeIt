@@ -1,15 +1,17 @@
-// ignore_for_file: prefer_const_constructors
-
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:todo_app/firebase_options.dart';
 import 'package:todo_app/pages/home_page.dart';
-import 'package:hive_flutter/hive_flutter.dart';
+// import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
-  // init the hive
-  await Hive.initFlutter();
+  // // init the hive
+  // await Hive.initFlutter();
 
   // open a box
-  await Hive.openBox('myBox');
+  // await Hive.openBox('myBox');
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   
   runApp(const MyApp());
 }
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.yellow),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
