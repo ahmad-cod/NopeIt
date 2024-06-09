@@ -30,7 +30,7 @@ class DialogBox extends StatelessWidget {
               controller: controller,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: 'Enter New To do...'
+                hintText: 'Enter A New Not Todo'
               ),
             ),
 
